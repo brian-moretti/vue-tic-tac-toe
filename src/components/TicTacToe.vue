@@ -6,7 +6,7 @@ import router from '@/router'
 import { setupStore } from '@/stores/setupStore'
 import { onMounted, ref } from 'vue'
 
-let finalWinner: IPlayer
+let finalWinner: IPlayer | undefined
 
 const winningConditions = [
   [0, 1, 2],
@@ -64,10 +64,10 @@ function checkGameProgress(target: HTMLElement) {
   const otherPlayer = players.find((p) => p.role !== initialPlayer.role)!
   if (turn % 2 === 0) {
     target.classList.add(initialPlayer.role)
-    updateTurn(initialPlayer.role)
+    updateTurn(otherPlayer.role)
   } else {
     target.classList.add(otherPlayer.role)
-    updateTurn(otherPlayer.role)
+    updateTurn(initialPlayer.role)
   }
   if (turn >= 10 && !finalWinner) {
     infoText.value = "It's a tie! It's gonna be better next time"
@@ -112,40 +112,44 @@ function onResetGame() {
     }
   })
   turn = 1
+  finalWinner = undefined
   infoText.value = `Game Start! It's your turn ${initialPlayer.title}`
 }
 </script>
 
 <template>
   <main class="main_container" @pointerup="onClick">
-    <section class="section first_row">
-      <div class="row"></div>
-      <div class="dividing_line"></div>
-      <div class="row central"></div>
-      <div class="dividing_line"></div>
-      <div class="row"></div>
-    </section>
-    <section class="section second_row">
-      <div class="row"></div>
-      <div class="dividing_line"></div>
-      <div class="row central"></div>
-      <div class="dividing_line"></div>
-      <div class="row"></div>
-    </section>
-    <section class="section third_row">
-      <div class="row"></div>
-      <div class="dividing_line"></div>
-      <div class="row central"></div>
-      <div class="dividing_line"></div>
-      <div class="row"></div>
-    </section>
+    <div class="tic-tac-toe">
+      <section class="section first_row">
+        <div class="row"></div>
+        <div class="dividing_line"></div>
+        <div class="row central"></div>
+        <div class="dividing_line"></div>
+        <div class="row"></div>
+      </section>
+      <section class="section second_row">
+        <div class="row"></div>
+        <div class="dividing_line"></div>
+        <div class="row central"></div>
+        <div class="dividing_line"></div>
+        <div class="row"></div>
+      </section>
+      <section class="section third_row">
+        <div class="row"></div>
+        <div class="dividing_line"></div>
+        <div class="row central"></div>
+        <div class="dividing_line"></div>
+        <div class="row"></div>
+      </section>
+    </div>
     <div class="info">{{ infoText }}</div>
-
-    <button type="button" @click="onResetGame()">Reset the game</button>
+    <button type="button" class="button" @click="onResetGame()">Reset the game</button>
   </main>
 </template>
 
 <style scoped>
+@import '../assets/main.css';
+
 .cross_user {
   background: url('./icons/close.png');
   background-repeat: no-repeat;
@@ -161,16 +165,22 @@ function onResetGame() {
 }
 
 .main_container {
-  border: 1px solid red;
-  height: 70dvh;
-  display: grid;
   padding: 1rem;
   width: 100%;
 }
 
+.tic-tac-toe {
+  display: grid;
+  background-color: #e8f5e9;
+  height: 70dvh;
+}
+
 .info {
-  border: 1px solid red;
   text-align: center;
+  margin: 10px 0;
+  font-size: 1.125rem;
+  color: #ffb74d;
+  font-weight: bold;
 }
 
 .section {

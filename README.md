@@ -1,39 +1,17 @@
-# vue-first-setup
+# Vue Project - Tic Tac Toe
 
-This template should help get you started developing with Vue 3 in Vite.
+Welcome to my first Vue project for Start2Impact University.
 
-## Recommended IDE Setup
+## The Project: Classic Tic Tac Toe
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Even if not requested, the user can decide which icon (cross / circle) go first.
+After selected the user will play tic tac toe.
 
-## Type Support for `.vue` Imports in TS
+If 3 fields with the same icon are aligned the game ends with a victory otherwise the game ends in a tie.
+The user can reset the game and start again
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+Play now: [Vue | Tic-Tac-Toe](https://codepen.io/brian-moretti/pen/LEPPwqd)
 
-## Customize configuration
+## :incoming_envelope: Contact me
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+If you find some bugs to fix or simply you want to send me a message please write me at [**brianmoretti2512@gmail.com**](mailto:brianmoretti2512@gmail.com) or [**LinkedIn | Brian Moretti**](https://www.linkedin.com/in/brian-moretti/)
