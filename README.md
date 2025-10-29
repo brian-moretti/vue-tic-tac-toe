@@ -10,7 +10,7 @@ After selected the user will play tic tac toe.
 If 3 fields with the same icon are aligned the game ends with a victory otherwise the game ends in a tie.
 The user can reset the game and start again
 
-Play now: [Vue | Tic-Tac-Toe](https://codepen.io/brian-moretti/pen/LEPPwqd)
+Play now: [Vue | Tic-Tac-Toe](https://tic-tac-toe-vue-project.netlify.app/)
 
 ## :incoming_envelope: Contact me
 
