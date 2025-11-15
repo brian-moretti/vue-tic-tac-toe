@@ -2,5 +2,5 @@
 
 <template>
   <h1 class="title">Vue Tic Tac Toe</h1>
-  <RouterView />
+  <RouterView :key="$route.fullPath" />
 </template>

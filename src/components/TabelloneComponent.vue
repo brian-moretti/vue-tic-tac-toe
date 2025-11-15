@@ -5,6 +5,7 @@ import type { IPlayer } from '@/core/interfaces/player.interface'
 import router from '@/router'
 import { setupStore } from '@/stores/setupStore'
 import { onMounted, ref } from 'vue'
+import CellaComponent from './CellaComponent.vue'
 
 const cellsConfig = [
   { id: 1, class: 'border-br' },
@@ -44,7 +45,8 @@ const setupStoreValue = setupStore()
 
 onMounted(() => {
   if (!setupStoreValue.setup) {
-    router.back()
+    router.replace('choose-setup')
+    return
   }
   initialPlayer = setupPlayers(setupStoreValue.setup)
   cells = document.querySelectorAll('[class^=border]')
@@ -148,7 +150,7 @@ function onResetGame() {
 @import '../assets/main.css';
 
 .main_container {
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
 }
 
@@ -165,5 +167,17 @@ function onResetGame() {
   font-size: 1.125rem;
   color: #ffb74d;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .tic-tac-toe {
+    height: 65dvh;
+  }
+}
+@media (768px <= width < 1024px) {
+  .tic-tac-toe {
+    width: 500px;
+    margin: 0 auto;
+  }
 }
 </style>

@@ -1,17 +1,5 @@
 <script lang="ts" setup>
 defineProps({ cell: Number, cellClass: String })
-
-/* function onClick(event: PointerEvent) {
-  const target = event.target as HTMLElement
-  const circleCell = target.classList.contains('circle_user')
-  const crossCell = target.classList.contains('cross_user')
-  const cellUsed = circleCell || crossCell
-  if (target.matches('[class^=border]') && !cellUsed) {
-    checkGameProgress(target)
-    const winner = checkWinner()
-    getResult(winner)
-  }
-} */
 </script>
 
 <template>
