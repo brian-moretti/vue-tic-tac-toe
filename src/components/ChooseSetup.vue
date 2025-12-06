@@ -65,13 +65,13 @@ function goToGame() {
 }
 
 .selection {
-  font-size: 1rem;
+  font-size: clamp(12px, calc(12px + .75vw), 2rem);
   padding: 5px 3px;
   border-radius: 3px;
 }
 
 .info {
-  font-size: 1.125rem;
+  font-size: clamp(12px, calc(12px + .75vw), 2rem);
   color: #ffb74d;
   font-weight: bold;
 }

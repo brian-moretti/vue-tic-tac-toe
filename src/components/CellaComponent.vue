@@ -47,15 +47,9 @@ defineProps({ cell: Number, cellClass: String })
 
 .cross_user {
   background: url('./icons/close.png');
-  background-repeat: no-repeat;
-  background-size: 60%;
-  background-position: center;
 }
 
 .circle_user {
   background: url('./icons/circle.png');
-  background-repeat: no-repeat;
-  background-size: 60%;
-  background-position: center;
 }
 </style>

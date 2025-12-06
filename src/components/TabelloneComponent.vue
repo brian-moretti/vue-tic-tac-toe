@@ -151,33 +151,47 @@ function onResetGame() {
 
 .main_container {
   padding: 0.5rem;
-  width: 100%;
 }
 
 .tic-tac-toe {
+  width: calc(90vmin - 1.125rem - 0.5rem);
+  max-width: calc(75% - 1.125rem - 0.5rem);
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   background-color: #e8f5e9;
-  height: 70dvh;
+  border-radius: 8px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.45),
+    0 4px 10px rgba(0, 0, 0, 0.30);
+}
+
+.tic-tac-toe > div {
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: center;
 }
 
 .info {
+  font-size: clamp(12px, calc(12px + 0.75vw), 2rem);
   text-align: center;
   margin: 10px 0;
-  font-size: 1.125rem;
   color: #ffb74d;
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .tic-tac-toe {
-    height: 65dvh;
+    width: 100%;
+    max-width: calc(620px - 1rem);
   }
 }
-@media (768px <= width < 1024px) {
+
+@media (min-width: 1024px) {
   .tic-tac-toe {
-    width: 500px;
-    margin: 0 auto;
+    max-width: calc(80% - 1.125rem - 0.5rem);
   }
 }
 </style>
